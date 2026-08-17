@@ -46,7 +46,7 @@ spec:
       serviceAccountName: nst-init
       containers:
         - name: nst-init
-          image: ghcr.io/krushndayshmookh/nst-init:latest
+          image: ghcr.io/kritgarg/nst-init:latest
           ports:
             - containerPort: 8080
           env:
