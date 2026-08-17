@@ -26,9 +26,14 @@ function validateK8sName(name) {
 function is404(e) {
   return (
     e?.response?.statusCode === 404 ||
+    e?.response?.status === 404 ||
     e?.statusCode === 404 ||
+    e?.status === 404 ||
+    e?.code === 404 ||
     e?.body?.code === 404 ||
-    (e?.message && e.message.includes('HTTP-Code: 404'))
+    e?.body?.reason === 'NotFound' ||
+    e?.reason === 'NotFound' ||
+    (e?.message && (e.message.includes('404') || e.message.includes('NotFound') || e.message.includes('HTTP-Code: 404')))
   )
 }
 

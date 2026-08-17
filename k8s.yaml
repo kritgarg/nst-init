@@ -47,6 +47,7 @@ spec:
       containers:
         - name: nst-init
           image: ghcr.io/kritgarg/nst-init:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
